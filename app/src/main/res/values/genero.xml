@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Spinner</string>
+    <string name="spn_title">Choose a language</string>
+
+    <string-array name="genero">
+        <item>Rock</item>
+        <item>Metal</item>
+        <item>a</item>
+    </string-array>
+</resources>
