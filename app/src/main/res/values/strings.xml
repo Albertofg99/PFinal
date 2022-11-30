@@ -3,4 +3,12 @@
     <string name="pass">Contraseña</string>
     <string name="user">Usuario</string>
     <string name="enter">Entrar</string>
+    <string name="correct">Datos correctos</string>
+    <string name="incorrect">Datos incorrectos</string>
+    <string name="wrong_user">Usuario incorrecto</string>
+    <string name="wrong_pass">Contraseña incorrecta</string>
+
+    <string name="Genre">Genero</string>
+    <string name="Author">Autores</string>
+    <string name="Song">Canciones</string>
 </resources>

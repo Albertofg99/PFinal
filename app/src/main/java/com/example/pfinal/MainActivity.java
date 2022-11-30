@@ -29,13 +29,19 @@ public class MainActivity extends AppCompatActivity {
                 String contrasena = etx2.getText().toString();
 
 
-                if (usuario.equals("admin")&& contrasena.equals("1234")){
-                    Toast.makeText(MainActivity.this, "Datos correctos", Toast.LENGTH_LONG).show();
+                if (usuario.equals("admin") && contrasena.equals("1234")){
+                    Toast.makeText(MainActivity.this, R.string.correct, Toast.LENGTH_LONG).show();
                     setContentView(R.layout.fragment_reproductor);
+                }else if(!usuario.equals("admin") && contrasena.equals("1234")){
+                    Toast.makeText(MainActivity.this, R.string.wrong_user, Toast.LENGTH_LONG).show();
+                }else if(usuario.equals("admin") && !contrasena.equals("1234")){
+                    Toast.makeText(MainActivity.this, R.string.wrong_pass, Toast.LENGTH_LONG).show();
                 }else{
-                    Toast.makeText(MainActivity.this, "Datos incorrectos", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, R.string.incorrect, Toast.LENGTH_LONG).show();
                 }
             }
         });
     }
+
+
 }

@@ -7,10 +7,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ReproductorFragment#newInstance} factory method to
+ * Use the  factory method to
  * create an instance of this fragment.
  */
 public class ReproductorFragment extends Fragment {
@@ -61,4 +64,5 @@ public class ReproductorFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_reproductor, container, false);
     }
+
 }

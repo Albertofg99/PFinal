@@ -4,5 +4,13 @@
     <string name="pass">Password</string>
     <string name="user">User</string>
     <string name="spn_title">Choose language</string>
-    <string name="enter">Enter</string>
+    <string name="enter">Login</string>
+    <string name="correct">Correct data</string>
+    <string name="incorrect">Incorrect data</string>
+    <string name="wrong_user">Wrong user</string>
+    <string name="wrong_pass">Wrong password</string>
+
+    <string name="Genre">Genre</string>
+    <string name="Author">Authors</string>
+    <string name="Song">Songs</string>
 </resources>

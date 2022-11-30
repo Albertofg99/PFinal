@@ -11,27 +11,29 @@
         android:layout_height="match_parent"
         android:background="@drawable/background_proyecto">
 
+
         <Spinner
             android:id="@+id/sGenero"
             android:layout_width="409dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="100dp"
             android:entries="@array/genero"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             android:inputType="textEmailAddress"
             android:minHeight="48dp"
+            android:textAlignment="center"
             android:textColor="#FFFFFF"
-            android:textColorHint="#FDFDFD"/>
+            android:textColorHint="#FDFDFD"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
             android:id="@+id/sAutor"
             android:layout_width="409dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="100dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sGenero" />
 
@@ -39,17 +41,67 @@
             android:id="@+id/sCancion"
             android:layout_width="409dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="100dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sAutor" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/imageViewLogo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:layout_editor_absoluteX="148dp"
             tools:layout_editor_absoluteY="510dp"
             tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/Genre"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/sGenero"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/Author"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+
+            app:layout_constraintBottom_toTopOf="@+id/sAutor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sGenero" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="124dp"
+            android:layout_height="44dp"
+
+            android:text="@string/Song"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+
+            app:layout_constraintBottom_toTopOf="@+id/sCancion"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sAutor"
+            app:layout_constraintVertical_bias="0.547" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
