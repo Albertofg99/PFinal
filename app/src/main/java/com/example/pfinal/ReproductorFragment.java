@@ -35,7 +35,7 @@ public class ReproductorFragment extends Fragment {
         sAuthor = getView().findViewById(R.id.sAuthor);
         sSongs = getView().findViewById(R.id.sSongs);
 
-        init();
+
 
         // Rellenar el sAuthor dependiendo de lo escogido en el sGender
         sGender.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){

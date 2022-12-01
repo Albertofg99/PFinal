@@ -24,7 +24,8 @@
             android:textColorHint="#FDFDFD"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:entries="@array/genero"/>
 
         <Spinner
             android:id="@+id/sAuthor"
@@ -54,17 +55,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sAuthor" />
-
-        <ImageView
-            android:id="@+id/imageViewLogo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sSongs"
-            tools:src="@tools:sample/avatars" />
+            app:layout_constraintTop_toBottomOf="@+id/sAuthor"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/textView"
@@ -140,6 +132,20 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="140dp"
+            android:layout_height="96dp"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginEnd="131dp"
+            android:layout_marginBottom="71dp"
+            android:src="@drawable/button_custom"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sSongs" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
