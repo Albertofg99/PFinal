@@ -10,7 +10,7 @@
     <string name="wrong_user">Wrong user</string>
     <string name="wrong_pass">Wrong password</string>
 
-    <string name="Genre">Genre</string>
+    <string name="Genre">Gender</string>
     <string name="Author">Authors</string>
     <string name="Song">Songs</string>
 </resources>

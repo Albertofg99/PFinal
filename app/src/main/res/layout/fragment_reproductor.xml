@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background_proyecto">
+        android:background="@drawable/backgroundproyecto3">
 
 
         <Spinner
@@ -31,6 +31,11 @@
             android:layout_width="409dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FDFDFD"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,6 +46,11 @@
             android:layout_width="409dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FDFDFD"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -50,8 +60,10 @@
             android:id="@+id/imageViewLogo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="148dp"
-            tools:layout_editor_absoluteY="510dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sSongs"
             tools:src="@tools:sample/avatars" />
 
         <TextView
