@@ -11,6 +11,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the  factory method to
@@ -18,44 +21,80 @@ import android.widget.Spinner;
  */
 public class ReproductorFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public ReproductorFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ReproductorFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ReproductorFragment newInstance(String param1, String param2) {
-        ReproductorFragment fragment = new ReproductorFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    Spinner sGender, sAuthor, sSongs;
+    List<String> listGender;
+    List<String> listAuthor;
+    List<String> listSongs;
+    ArrayAdapter<String> adapterGender, adapterAuthor, adapterSongs;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
+        sGender = getView().findViewById(R.id.sGender);
+        sAuthor = getView().findViewById(R.id.sAuthor);
+        sSongs = getView().findViewById(R.id.sSongs);
+
+        init();
+
+        sGender.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                int position =(int)adapterView.getItemAtPosition(i);
+                switch (position){
+                    case 0:
+                        listAuthor = new ArrayList<>();
+                        listAuthor.add("Nirvana");
+                        listAuthor.add("Imagine Monkeys");
+                        loadAuthor(listAuthor);
+                        break;
+                    case 1:
+                        listAuthor = new ArrayList<>();
+                        listAuthor.add("Skrillex");
+                        listAuthor.add("Steve Aoki");
+                        loadAuthor(listAuthor);
+                        break;
+                    case 2:
+                        listAuthor = new ArrayList<>();
+                        listAuthor.add("Lil Bokeron");
+                        listAuthor.add("Niqitou");
+                        loadAuthor(listAuthor);
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+    }
+
+    // Iniciar el spinner genero con los generos escogidos
+    public void init(){
+        listGender = new ArrayList<>();
+        listGender.add("Rock");
+        listGender.add("Electronica");
+        listGender.add("xd");
+    }
+
+    public void loadGender(List<String> list_gender){
+        adapterGender = new ArrayAdapter<String>(getActivity(),
+                androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,list_gender);
+        sGender.setAdapter(adapterGender);
+    }
+
+    public void loadAuthor(List<String> list_author){
+        adapterAuthor = new ArrayAdapter<String>(getActivity(),
+                androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,list_author);
+        sAuthor.setAdapter(adapterAuthor);
+    }
+
+    public void loadSongs(List<String> list_songs){
+        adapterSongs = new ArrayAdapter<String>(getActivity(),
+                androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,list_songs);
+        sSongs.setAdapter(adapterSongs);
     }
 
     @Override
@@ -65,4 +104,14 @@ public class ReproductorFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_reproductor, container, false);
     }
 
+    public ReproductorFragment() {
+        // Required empty public constructor
+    }
+
+    public static ReproductorFragment newInstance(String param1, String param2) {
+        ReproductorFragment fragment = new ReproductorFragment();
+        Bundle args = new Bundle();
+        fragment.setArguments(args);
+        return fragment;
+    }
 }

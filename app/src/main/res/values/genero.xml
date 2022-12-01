@@ -5,6 +5,6 @@
     <string-array name="genero">
         <item>Rock</item>
         <item>Metal</item>
-        <item>a</item>
+        <item>Electronica</item>
     </string-array>
 </resources>

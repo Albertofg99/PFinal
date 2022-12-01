@@ -13,11 +13,10 @@
 
 
         <Spinner
-            android:id="@+id/sGenero"
+            android:id="@+id/sGender"
             android:layout_width="409dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
-            android:entries="@array/genero"
             android:inputType="textEmailAddress"
             android:minHeight="48dp"
             android:textAlignment="center"
@@ -28,24 +27,24 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
-            android:id="@+id/sAutor"
+            android:id="@+id/sAuthor"
             android:layout_width="409dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sGenero" />
+            app:layout_constraintTop_toBottomOf="@+id/sGender" />
 
         <Spinner
-            android:id="@+id/sCancion"
+            android:id="@+id/sSongs"
             android:layout_width="409dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sAutor" />
+            app:layout_constraintTop_toBottomOf="@+id/sAuthor" />
 
         <ImageView
             android:id="@+id/imageViewLogo"
@@ -66,7 +65,7 @@
             android:textColor="#FFFFFF"
 
             android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/sGenero"
+            app:layout_constraintBottom_toTopOf="@+id/sGender"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -81,10 +80,10 @@
             android:textColor="#FFFFFF"
             android:textSize="20sp"
 
-            app:layout_constraintBottom_toTopOf="@+id/sAutor"
+            app:layout_constraintBottom_toTopOf="@+id/sAuthor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sGenero" />
+            app:layout_constraintTop_toBottomOf="@+id/sGender" />
 
         <TextView
             android:id="@+id/textView3"
@@ -96,17 +95,17 @@
             android:textColor="#FFFFFF"
             android:textSize="20sp"
 
-            app:layout_constraintBottom_toTopOf="@+id/sCancion"
+            app:layout_constraintBottom_toTopOf="@+id/sSongs"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sAutor" />
+            app:layout_constraintTop_toBottomOf="@+id/sAuthor" />
 
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="387dp"
             android:layout_height="30dp"
             android:src="@drawable/straightwhiteline"
-            app:layout_constraintBottom_toTopOf="@+id/sGenero"
+            app:layout_constraintBottom_toTopOf="@+id/sGender"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -116,7 +115,7 @@
             android:layout_width="387dp"
             android:layout_height="30dp"
             android:src="@drawable/straightwhiteline"
-            app:layout_constraintBottom_toTopOf="@+id/sAutor"
+            app:layout_constraintBottom_toTopOf="@+id/sAuthor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
