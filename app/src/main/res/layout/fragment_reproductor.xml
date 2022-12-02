@@ -135,13 +135,13 @@
 
         <ImageButton
             android:id="@+id/imageButton"
-            android:layout_width="140dp"
-            android:layout_height="96dp"
+            android:layout_width="108dp"
+            android:layout_height="97dp"
             android:layout_marginStart="140dp"
             android:layout_marginTop="120dp"
             android:layout_marginEnd="131dp"
             android:layout_marginBottom="71dp"
-            android:src="@drawable/button_custom"
+            android:src="@drawable/botonplayproyecto2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
