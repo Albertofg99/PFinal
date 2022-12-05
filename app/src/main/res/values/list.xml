@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">Spinner</string>
+    <string name="spn_title">Elige idioma</string>
+
+    <string-array name="listGender">
+        <item>Rock</item>
+        <item>Electronica</item>
+        <item>xd</item>
+    </string-array>
+
+    <string-array name="listAuthorRock">
+        <item>Nirvana</item>
+        <item>Imagine Dragons</item>
+    </string-array>
+
+    <string-array name="listAuthorElectronica">
+        <item>Skrillex</item>
+        <item>Steve Aoki</item>
+    </string-array>
+
+    <string-array name="listAuthorA">
+        <item>Lil Bokeron</item>
+        <item>a</item>
+    </string-array>
+
+    <string-array name="listSongNirvana">
+        <item>a</item>
+        <item>b</item>
+    </string-array>
+
+    <string-array name="listSongImagineDragons">
+        <item>c</item>
+        <item>d</item>
+    </string-array>
+
+    <string-array name="listSongSkrillex">
+        <item>e</item>
+        <item>f</item>
+    </string-array>
+
+    <string-array name="listSongSteveAoki">
+        <item>g</item>
+        <item>h</item>
+    </string-array>
+
+    <string-array name="listSongLilBokeron">
+        <item>i</item>
+    </string-array>
+
+    <string-array name="listSongA">
+        <item>j</item>
+        <item>k</item>
+    </string-array>
+
+</resources>

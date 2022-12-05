@@ -1,5 +1,6 @@
 package com.example.pfinal;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,12 +8,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.RotateAnimation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,28 +23,15 @@ import java.util.List;
  */
 public class ReproductorFragment extends Fragment {
 
-    Spinner spinnerGender, spinnerAuthor, spinnerSongs;
-    List<String> listAuthor;
-    List<String> listSongs;
-    ArrayAdapter<String> adapterAuthor, adapterSongs;
+    static MediaPlayer mediaPlayer = null;
+    static RotateAnimation animation = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-
-    // Iniciar la carga de datos del spinner Author con los datos pasados
-    public void loadAuthor(List<String> list_author){
-        adapterAuthor = new ArrayAdapter<>(getActivity(),
-                android.R.layout.simple_spinner_item, list_author);
-        spinnerAuthor.setAdapter(adapterAuthor);
-    }
-
-    // Iniciar la carga de datos del spinner Songs con los datos pasados
-    public void loadSongs(List<String> list_songs){
-        adapterSongs = new ArrayAdapter<>(getActivity(),
-                androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, list_songs);
-        spinnerSongs.setAdapter(adapterSongs);
+    public ReproductorFragment() {
+        // Required empty public constructor
     }
 
     @Override
@@ -52,36 +41,39 @@ public class ReproductorFragment extends Fragment {
 
         View v= inflater.inflate(R.layout.fragment_reproductor, container, false);
 
-        spinnerGender = v.findViewById(R.id.sGender);
-        spinnerAuthor = v.findViewById(R.id.sAuthor);
-        spinnerSongs = v.findViewById(R.id.sSongs);
+        ImageButton btnPlayPause = v.findViewById(R.id.imageButtonPlayPause);
+        ImageButton btnStop = v.findViewById(R.id.imageButtonStop);
+        ImageView ivImagen = v.findViewById(R.id.ivAlbum);
+
+        Spinner spinnerGender = v.findViewById(R.id.sGender);
+        Spinner spinnerAuthor = v.findViewById(R.id.sAuthor);
+        Spinner spinnerSongs = v.findViewById(R.id.sSongs);
+
+        // Adapter para rellenar el spinner genero
+        ArrayAdapter adapterGender = new ArrayAdapter(this.getContext(), android.R.layout.simple_spinner_item,getResources().getStringArray(R.array.listGender));
+        spinnerGender.setAdapter(adapterGender);
+
 
         // Rellenar el sAuthor dependiendo de lo escogido en el sGender
         spinnerGender.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
 
+            ArrayAdapter adapterAuthor;
+
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                int position =(int)adapterView.getItemAtPosition(i);
 
-                switch (position){
+                switch (i){
                     case 1: //Rock
-                        listAuthor = new ArrayList<>();
-                        listAuthor.add("Nirvana");
-                        listAuthor.add("Imagine Dragons");
-                        loadAuthor(listAuthor);
+                        adapterAuthor = new ArrayAdapter(view.getContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.listAuthorRock));
+                        spinnerAuthor.setAdapter(adapterAuthor);
                         break;
                     case 2: //Electronica
-                        listAuthor = new ArrayList<>();
-                        listAuthor.add("Skrillex");
-                        listAuthor.add("Steve Aoki");
-
-                        loadAuthor(listAuthor);
+                        adapterAuthor = new ArrayAdapter(view.getContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.listAuthorElectronica));
+                        spinnerAuthor.setAdapter(adapterAuthor);
                         break;
                     case 3: //Española
-                        listAuthor = new ArrayList<>();
-                        listAuthor.add("Lil Bokeron");
-                        listAuthor.add("Bad Gyal");
-                        loadAuthor(listAuthor);
+                        adapterAuthor = new ArrayAdapter(view.getContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.listAuthorA));
+                        spinnerAuthor.setAdapter(adapterAuthor);
                         break;
                 }
             }
@@ -95,44 +87,46 @@ public class ReproductorFragment extends Fragment {
         // Cargar el sSongs dependiendo de la eleccion en el sAuthor
         spinnerAuthor.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
 
+            ArrayAdapter adapterSong;
+
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String item = adapterView.getSelectedItem().toString();
                 switch (item){
                     case "Nirvana":
-                        listSongs = new ArrayList<>();
-                        listSongs.add("a");
-                        listSongs.add("b");
-                        loadSongs(listSongs);
+
+                        adapterSong = new ArrayAdapter(view.getContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.listSongNirvana));
+                        spinnerSongs.setAdapter(adapterSong);
                         break;
+
                     case "Imagine Dragons":
-                        listSongs = new ArrayList<>();
-                        listSongs.add("c");
-                        listSongs.add("d");
-                        loadSongs(listSongs);
+
+                        adapterSong = new ArrayAdapter(view.getContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.listSongImagineDragons));
+                        spinnerSongs.setAdapter(adapterSong);
                         break;
+
                     case "Skrillex":
-                        listAuthor = new ArrayList<>();
-                        listAuthor.add("e");
-                        listAuthor.add("f");
-                        loadSongs(listSongs);
+
+                        adapterSong = new ArrayAdapter(view.getContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.listSongSkrillex));
+                        spinnerSongs.setAdapter(adapterSong);
                         break;
+
                     case "Steve Aoki":
-                        listAuthor = new ArrayList<>();
-                        listAuthor.add("g");
-                        listAuthor.add("h");
-                        loadSongs(listSongs);
+
+                        adapterSong = new ArrayAdapter(view.getContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.listSongSteveAoki));
+                        spinnerSongs.setAdapter(adapterSong);
                         break;
+
                     case "Lil Bokeron":
-                        listAuthor = new ArrayList<>();
-                        listAuthor.add("i");
-                        loadSongs(listSongs);
+
+                        adapterSong = new ArrayAdapter(view.getContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.listSongLilBokeron));
+                        spinnerSongs.setAdapter(adapterSong);
                         break;
-                    case "Bad Gyal":
-                        listAuthor = new ArrayList<>();
-                        listAuthor.add("j");
-                        listAuthor.add("k");
-                        loadSongs(listSongs);
+
+                    case "a":
+
+                        adapterSong = new ArrayAdapter(view.getContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.listSongA));
+                        spinnerSongs.setAdapter(adapterSong);
                         break;
                 }
             }
@@ -143,18 +137,41 @@ public class ReproductorFragment extends Fragment {
             }
         });
 
+        btnPlayPause.setImageResource(R.drawable.botonplayproyecto2);
+
+        btnPlayPause.setOnClickListener(view -> {
+
+            animation.setDuration(mediaPlayer.getDuration()/100);
+            animation.setRepeatCount(mediaPlayer.getDuration()/100);
+
+            if (mediaPlayer.isPlaying()) {
+
+                btnPlayPause.setImageResource(R.drawable.botonplayproyecto2);
+                mediaPlayer.pause();
+
+                animation.cancel();
+
+            }else{
+
+                btnPlayPause.setImageResource(R.drawable.botonpauseproyecto2);
+                mediaPlayer.start();
+
+                ivImagen.startAnimation(animation);
+
+            }
+        });
+
+        btnStop.setOnClickListener(view -> pararQuest(btnPlayPause));
 
         return v;
     }
 
-    public ReproductorFragment() {
-        // Required empty public constructor
+    public void pararQuest(ImageButton ib){
+        if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+            mediaPlayer.stop();
+            animation.cancel();
+            ib.setImageResource(R.drawable.botonplayproyecto2);
+        }
     }
 
-    public static ReproductorFragment newInstance() {
-        ReproductorFragment fragment = new ReproductorFragment();
-        Bundle args = new Bundle();
-        fragment.setArguments(args);
-        return fragment;
-    }
 }

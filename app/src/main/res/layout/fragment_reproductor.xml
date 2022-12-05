@@ -16,16 +16,16 @@
             android:id="@+id/sGender"
             android:layout_width="409dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="96dp"
             android:inputType="textEmailAddress"
             android:minHeight="48dp"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textColorHint="#FDFDFD"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:entries="@array/genero"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
             android:id="@+id/sAuthor"
@@ -134,15 +134,46 @@
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/imageButtonPlayPause"
             android:layout_width="108dp"
             android:layout_height="97dp"
             android:layout_marginStart="140dp"
-            android:layout_marginTop="120dp"
             android:layout_marginEnd="131dp"
-            android:layout_marginBottom="71dp"
+            android:layout_marginBottom="17dp"
+            android:background="@android:color/transparent"
             android:src="@drawable/botonplayproyecto2"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.562"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sSongs"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageButton
+            android:id="@+id/imageButtonStop"
+            android:layout_width="94dp"
+            android:layout_height="97dp"
+            android:layout_marginStart="16dp"
+            android:background="@android:color/transparent"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.357"
+            app:layout_constraintStart_toEndOf="@+id/imageButtonPlayPause"
+            app:layout_constraintTop_toBottomOf="@+id/sSongs"
+            app:layout_constraintVertical_bias="0.91"
+            tools:src="@drawable/botonstopproyecto2" />
+
+        <ImageView
+            android:id="@+id/ivAlbum"
+            android:layout_width="157dp"
+            android:layout_height="139dp"
+            android:layout_marginStart="127dp"
+            android:layout_marginEnd="127dp"
+            android:src="@drawable/noanimepenguin"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/imageButtonPlayPause"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sSongs" />
