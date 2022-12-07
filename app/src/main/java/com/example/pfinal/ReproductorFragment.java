@@ -53,14 +53,12 @@ public class ReproductorFragment extends Fragment {
         ArrayAdapter adapterGender = new ArrayAdapter(this.getContext(), android.R.layout.simple_spinner_item,getResources().getStringArray(R.array.listGender));
         spinnerGender.setAdapter(adapterGender);
 
-
         // Rellenar el sAuthor dependiendo de lo escogido en el sGender
         spinnerGender.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
-
-            ArrayAdapter adapterAuthor;
-
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                ArrayAdapter adapterAuthor;
 
                 pararQuest(btnPlayPause);
 
@@ -88,11 +86,10 @@ public class ReproductorFragment extends Fragment {
 
         // Cargar el sSongs dependiendo de la eleccion en el sAuthor
         spinnerAuthor.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
-
-            ArrayAdapter adapterSong;
-
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                ArrayAdapter adapterSong;
 
                 String item = adapterView.getSelectedItem().toString();
                 switch (item){
@@ -150,44 +147,54 @@ public class ReproductorFragment extends Fragment {
 
                 String item = adapterView.getSelectedItem().toString();
                 switch (item){
-                    case "Something In The Way": //Nirvana
+                    case "Something In The Way": //Nirvana: album Nevermind
 
+                        ivImagen.setImageResource(R.drawable.nevermind_nirvana);
                         mediaPlayer=MediaPlayer.create(getContext(), R.raw.nirvana_something_in_the_way);
                         break;
-                    case "Smells Like Teen Spirit":
+                    case "Smells Like Teen Spirit": //Album Nevermind
 
+                        ivImagen.setImageResource(R.drawable.nevermind_nirvana);
                         mediaPlayer=MediaPlayer.create(getContext(), R.raw.nirvana_smells_like_teen_spirit);
                         break;
-                    case "Bones": //Imagine Dragons
+                    case "Bones": //Imagine Dragons: album Mercury
 
+                        ivImagen.setImageResource(R.drawable.mercury_imaginedragons);
                         mediaPlayer=MediaPlayer.create(getContext(), R.raw.imagine_dragons_bones);
                         break;
-                    case "Enemy":
+                    case "Enemy": //Album Arcane
 
+                        ivImagen.setImageResource(R.drawable.arcane_imaginedragons);
                         mediaPlayer=MediaPlayer.create(getContext(), R.raw.imagine_dragons_enemy);
                         break;
-                    case "Ease My Mind": //Skrillex
+                    case "Ease My Mind": //Skrillex: album Recess
 
+                        ivImagen.setImageResource(R.drawable.recess_skrillex);
                         mediaPlayer=MediaPlayer.create(getContext(), R.raw.skrillex_ease_my_mind);
                         break;
                     case "Make It Bun Dem":
 
+                        ivImagen.setImageResource(R.drawable.makeit_skrillex);
                         mediaPlayer=MediaPlayer.create(getContext(), R.raw.skrillex_make_it_bun_dem);
                         break;
-                    case "Memories": //David Guetta
+                    case "Memories": //David Guetta: album One Love
 
+                        ivImagen.setImageResource(R.drawable.onelove_davidguetta);
                         mediaPlayer=MediaPlayer.create(getContext(), R.raw.david_guetta_memories);
                         break;
-                    case "Titanium":
+                    case "Titanium": //Album Nothing But The Beat
 
+                        ivImagen.setImageResource(R.drawable.nothingbutthebeat_davidguetta);
                         mediaPlayer=MediaPlayer.create(getContext(), R.raw.david_guetta_titanium);
                         break;
                     case "Versos Perversos": //Lil Bokeron
 
+                        ivImagen.setImageResource(R.drawable.versosperversos_lilbokeron);
                         mediaPlayer=MediaPlayer.create(getContext(), R.raw.lil_bokeron_versos_perversos);
                         break;
                     case "A Mi": //Rels B
 
+                        ivImagen.setImageResource(R.drawable.ami_relsb);
                         mediaPlayer=MediaPlayer.create(getContext(), R.raw.rels_b_a_mi);
                         break;
                 }

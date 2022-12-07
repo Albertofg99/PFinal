@@ -51,4 +51,8 @@
         <item>A Mi</item>
     </string-array>
 
+    <string-array name="nada">
+        <item> </item>
+    </string-array>
+
 </resources>

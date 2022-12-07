@@ -22,9 +22,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent i = new Intent(MainActivity.this, loadActivity.class);
-        startActivity(i);
-
         etx1= (EditText)findViewById(R.id.editTextTextEmailAddress);
         etx2= (EditText)findViewById(R.id.editTextTextPassword);
         btn= (Button)findViewById(R.id.buttonLogin);
@@ -44,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
                 }else if(usuario.equals("admin") && !contrasena.equals("1234")){
                     Toast.makeText(MainActivity.this, R.string.wrong_pass, Toast.LENGTH_LONG).show();
                 }else{
-                    Toast.makeText(MainActivity.this, R.string.incorrect, Toast.LENGTH_LONG).show();
+                    Intent i = new Intent(view.getContext(), deniedActivity.class);
+                    startActivity(i);
                 }
             }
         });
@@ -57,6 +55,4 @@ public class MainActivity extends AppCompatActivity {
                 .addToBackStack(null)
                 .commit();
     }
-
-
 }
