@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.RotateAnimation;
+
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
@@ -24,7 +24,7 @@ import android.widget.Spinner;
 public class ReproductorFragment extends Fragment {
 
     static MediaPlayer mediaPlayer = null;
-    static RotateAnimation animation = null;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,17 +62,19 @@ public class ReproductorFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
+                pararQuest(btnPlayPause);
+
                 switch (i){
-                    case 1: //Rock
+                    case 0: //Rock
                         adapterAuthor = new ArrayAdapter(view.getContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.listAuthorRock));
                         spinnerAuthor.setAdapter(adapterAuthor);
                         break;
-                    case 2: //Electronica
+                    case 1: //Electronica
                         adapterAuthor = new ArrayAdapter(view.getContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.listAuthorElectronica));
                         spinnerAuthor.setAdapter(adapterAuthor);
                         break;
-                    case 3: //Española
-                        adapterAuthor = new ArrayAdapter(view.getContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.listAuthorA));
+                    case 2: //Española
+                        adapterAuthor = new ArrayAdapter(view.getContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.listAuthorUrbana));
                         spinnerAuthor.setAdapter(adapterAuthor);
                         break;
                 }
@@ -91,6 +93,7 @@ public class ReproductorFragment extends Fragment {
 
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
                 String item = adapterView.getSelectedItem().toString();
                 switch (item){
                     case "Nirvana":
@@ -111,9 +114,9 @@ public class ReproductorFragment extends Fragment {
                         spinnerSongs.setAdapter(adapterSong);
                         break;
 
-                    case "Steve Aoki":
+                    case "David Guetta":
 
-                        adapterSong = new ArrayAdapter(view.getContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.listSongSteveAoki));
+                        adapterSong = new ArrayAdapter(view.getContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.listSongDavidGuetta));
                         spinnerSongs.setAdapter(adapterSong);
                         break;
 
@@ -123,10 +126,69 @@ public class ReproductorFragment extends Fragment {
                         spinnerSongs.setAdapter(adapterSong);
                         break;
 
-                    case "a":
+                    case "Rels B":
 
-                        adapterSong = new ArrayAdapter(view.getContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.listSongA));
+                        adapterSong = new ArrayAdapter(view.getContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.listSongRelsB));
                         spinnerSongs.setAdapter(adapterSong);
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        spinnerSongs.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+                    pararQuest(btnPlayPause);
+                }
+
+                String item = adapterView.getSelectedItem().toString();
+                switch (item){
+                    case "Something In The Way": //Nirvana
+
+                        mediaPlayer=MediaPlayer.create(getContext(), R.raw.nirvana_something_in_the_way);
+                        break;
+                    case "Smells Like Teen Spirit":
+
+                        mediaPlayer=MediaPlayer.create(getContext(), R.raw.nirvana_smells_like_teen_spirit);
+                        break;
+                    case "Bones": //Imagine Dragons
+
+                        mediaPlayer=MediaPlayer.create(getContext(), R.raw.imagine_dragons_bones);
+                        break;
+                    case "Enemy":
+
+                        mediaPlayer=MediaPlayer.create(getContext(), R.raw.imagine_dragons_enemy);
+                        break;
+                    case "Ease My Mind": //Skrillex
+
+                        mediaPlayer=MediaPlayer.create(getContext(), R.raw.skrillex_ease_my_mind);
+                        break;
+                    case "Make It Bun Dem":
+
+                        mediaPlayer=MediaPlayer.create(getContext(), R.raw.skrillex_make_it_bun_dem);
+                        break;
+                    case "Memories": //David Guetta
+
+                        mediaPlayer=MediaPlayer.create(getContext(), R.raw.david_guetta_memories);
+                        break;
+                    case "Titanium":
+
+                        mediaPlayer=MediaPlayer.create(getContext(), R.raw.david_guetta_titanium);
+                        break;
+                    case "Versos Perversos": //Lil Bokeron
+
+                        mediaPlayer=MediaPlayer.create(getContext(), R.raw.lil_bokeron_versos_perversos);
+                        break;
+                    case "A Mi": //Rels B
+
+                        mediaPlayer=MediaPlayer.create(getContext(), R.raw.rels_b_a_mi);
                         break;
                 }
             }
@@ -141,23 +203,14 @@ public class ReproductorFragment extends Fragment {
 
         btnPlayPause.setOnClickListener(view -> {
 
-            animation.setDuration(mediaPlayer.getDuration()/100);
-            animation.setRepeatCount(mediaPlayer.getDuration()/100);
-
             if (mediaPlayer.isPlaying()) {
 
                 btnPlayPause.setImageResource(R.drawable.botonplayproyecto2);
                 mediaPlayer.pause();
-
-                animation.cancel();
-
             }else{
 
                 btnPlayPause.setImageResource(R.drawable.botonpauseproyecto2);
                 mediaPlayer.start();
-
-                ivImagen.startAnimation(animation);
-
             }
         });
 
@@ -169,7 +222,6 @@ public class ReproductorFragment extends Fragment {
     public void pararQuest(ImageButton ib){
         if (mediaPlayer != null && mediaPlayer.isPlaying()) {
             mediaPlayer.stop();
-            animation.cancel();
             ib.setImageResource(R.drawable.botonplayproyecto2);
         }
     }

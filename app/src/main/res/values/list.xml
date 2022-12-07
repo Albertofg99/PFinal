@@ -5,7 +5,7 @@
     <string-array name="listGender">
         <item>Rock</item>
         <item>Electronica</item>
-        <item>xd</item>
+        <item>Urbana</item>
     </string-array>
 
     <string-array name="listAuthorRock">
@@ -15,41 +15,40 @@
 
     <string-array name="listAuthorElectronica">
         <item>Skrillex</item>
-        <item>Steve Aoki</item>
+        <item>David Guetta</item>
     </string-array>
 
-    <string-array name="listAuthorA">
+    <string-array name="listAuthorUrbana">
         <item>Lil Bokeron</item>
-        <item>a</item>
+        <item>Rels B</item>
     </string-array>
 
     <string-array name="listSongNirvana">
-        <item>a</item>
-        <item>b</item>
+        <item>Something In The Way</item>
+        <item>Smells Like Teen Spirit</item>
     </string-array>
 
     <string-array name="listSongImagineDragons">
-        <item>c</item>
-        <item>d</item>
+        <item>Bones</item>
+        <item>Enemy</item>
     </string-array>
 
     <string-array name="listSongSkrillex">
-        <item>e</item>
-        <item>f</item>
+        <item>Ease My Mind</item>
+        <item>Make It Bun Dem</item>
     </string-array>
 
-    <string-array name="listSongSteveAoki">
-        <item>g</item>
-        <item>h</item>
+    <string-array name="listSongDavidGuetta">
+        <item>Memories</item>
+        <item>Titanium</item>
     </string-array>
 
     <string-array name="listSongLilBokeron">
-        <item>i</item>
+        <item>Versos Perversos</item>
     </string-array>
 
-    <string-array name="listSongA">
-        <item>j</item>
-        <item>k</item>
+    <string-array name="listSongRelsB">
+        <item>A Mi</item>
     </string-array>
 
 </resources>

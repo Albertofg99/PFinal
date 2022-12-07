@@ -1,6 +1,7 @@
 package com.example.pfinal;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (usuario.equals("admin") && contrasena.equals("1234")){
                     Toast.makeText(MainActivity.this, R.string.correct, Toast.LENGTH_LONG).show();
-                    setContentView(R.layout.fragment_reproductor);
+                    fragmentoReproductor();
                 }else if(!usuario.equals("admin") && contrasena.equals("1234")){
                     Toast.makeText(MainActivity.this, R.string.wrong_user, Toast.LENGTH_LONG).show();
                 }else if(usuario.equals("admin") && !contrasena.equals("1234")){
@@ -47,6 +48,14 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    protected void fragmentoReproductor(){
+        FragmentTransaction ft= MainActivity.this.getSupportFragmentManager().beginTransaction();
+        ReproductorFragment rf= new ReproductorFragment();
+        ft.replace(android.R.id.content, rf)
+                .addToBackStack(null)
+                .commit();
     }
 
 
