@@ -24,7 +24,7 @@ import android.widget.Spinner;
 public class ReproductorFragment extends Fragment {
 
     static MediaPlayer mediaPlayer = null;
-
+    static int generoSel = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

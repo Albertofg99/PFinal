@@ -15,46 +15,46 @@
             android:id="@+id/sGender"
             android:layout_width="409dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="96dp"
+            android:layout_marginTop="3dp"
             android:inputType="textEmailAddress"
             android:minHeight="48dp"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textColorHint="#FDFDFD"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.009"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
         <Spinner
             android:id="@+id/sAuthor"
             android:layout_width="409dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="7dp"
             android:inputType="textEmailAddress"
             android:minHeight="48dp"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textColorHint="#FDFDFD"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.009"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sGender" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
         <Spinner
             android:id="@+id/sSongs"
             android:layout_width="409dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="1dp"
             android:inputType="textEmailAddress"
             android:minHeight="48dp"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textColorHint="#FDFDFD"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.009"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sAuthor"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
@@ -70,8 +70,10 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/sGender"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.257"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.566" />
 
         <TextView
             android:id="@+id/textView2"
@@ -85,8 +87,10 @@
 
             app:layout_constraintBottom_toTopOf="@+id/sAuthor"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.258"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sGender" />
+            app:layout_constraintTop_toBottomOf="@+id/sGender"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/textView3"
@@ -100,8 +104,10 @@
 
             app:layout_constraintBottom_toTopOf="@+id/sSongs"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.246"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sAuthor" />
+            app:layout_constraintTop_toBottomOf="@+id/sAuthor"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -110,8 +116,10 @@
             android:src="@drawable/straightwhiteline"
             app:layout_constraintBottom_toTopOf="@+id/sGender"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
             android:id="@+id/imageView4"
@@ -120,15 +128,19 @@
             android:src="@drawable/straightwhiteline"
             app:layout_constraintBottom_toTopOf="@+id/sAuthor"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
             android:id="@+id/imageView5"
             android:layout_width="387dp"
             android:layout_height="30dp"
+            android:layout_marginTop="4dp"
             android:src="@drawable/straightwhiteline"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.008"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -136,46 +148,41 @@
             android:id="@+id/imageButtonPlayPause"
             android:layout_width="108dp"
             android:layout_height="97dp"
-            android:layout_marginStart="140dp"
-            android:layout_marginEnd="131dp"
-            android:layout_marginBottom="17dp"
+            android:layout_marginStart="101dp"
             android:background="@android:color/transparent"
             android:src="@drawable/botonplayproyecto2"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.343"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sSongs"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintEnd_toStartOf="@+id/imageButtonStop"
+            app:layout_constraintStart_toEndOf="@+id/sSongs"
+            app:layout_constraintTop_toBottomOf="@+id/ivAlbum" />
 
         <ImageButton
             android:id="@+id/imageButtonStop"
             android:layout_width="94dp"
             android:layout_height="97dp"
-            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:background="@android:color/transparent"
             android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.357"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/imageButtonPlayPause"
-            app:layout_constraintTop_toBottomOf="@+id/sSongs"
-            app:layout_constraintVertical_bias="0.91"
+            tools:layout_editor_absoluteY="269dp"
             tools:src="@drawable/botonstopproyecto2" />
 
         <ImageView
             android:id="@+id/ivAlbum"
-            android:layout_width="112dp"
-            android:layout_height="101dp"
-            android:layout_marginStart="127dp"
-            android:layout_marginEnd="127dp"
+            android:layout_width="189dp"
+            android:layout_height="177dp"
+            android:layout_marginStart="65dp"
+            android:layout_marginEnd="65dp"
             android:src="@drawable/defaultalbumcover2"
             android:visibility="visible"
             app:layout_constraintBottom_toTopOf="@+id/imageButtonPlayPause"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sSongs" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/sGender"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
